@@ -5,7 +5,7 @@ type Campaign = {
   id: string;
   name: string;
   status: string;
-  createdAt: string; // expects ISO date string
+  createdAt: string; // ISO string date
 };
 
 export default function CampaignsPage() {
@@ -17,15 +17,13 @@ export default function CampaignsPage() {
         .then((campaigns: Campaign[]) =>
           campaigns.map((campaign) => ({
             ...campaign,
-            // @ts-ignore: Temporarily ignore any type errors if present
-            // @ts-expect-error
-createdAt: campaign.createdAt || "",
+            // @ts-expect-error: createdAt might be null or undefined, default fallback
+            createdAt: campaign.createdAt || "",
           }))
         ),
   });
 
   if (isLoading) return <div>Loading campaigns...</div>;
-
   if (error) return <div>Error loading campaigns.</div>;
 
   return (
