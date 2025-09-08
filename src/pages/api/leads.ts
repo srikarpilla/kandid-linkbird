@@ -4,7 +4,9 @@ import { leads } from "@/db/schema";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    // Query using Leads table object, not a string
+    if (!process.env.DATABASE_URL) {
+      throw new Error("DATABASE_URL is not set");
+    }
     const allLeads = await db.select().from(leads);
     res.status(200).json(allLeads);
   } catch (error) {

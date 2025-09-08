@@ -3,8 +3,7 @@ import { Pool } from "pg";
 import * as schema from "./schema";
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.DATABASE_URL, // Ensure this env var is set correctly
 });
 
-// Pass schema explicitly as "schema" property
 export const db = drizzle(pool, { schema });
