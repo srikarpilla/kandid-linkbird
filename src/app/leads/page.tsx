@@ -8,7 +8,7 @@ type Lead = {
   company: string;
   campaignId: string;
   status: string;
-  lastContactDate: string; // Serialized as string
+  lastContactDate: string; // ISO string
 };
 
 export default function LeadsPage() {
@@ -17,10 +17,9 @@ export default function LeadsPage() {
     queryFn: () =>
       fetch("/api/leads")
         .then((res) => res.json())
-        .then((leads: any[]) =>
+        .then((leads: Lead[]) =>
           leads.map((lead) => ({
             ...lead,
-            // Convert date objects (if any) to ISO strings
             lastContactDate:
               lead.lastContactDate instanceof Date
                 ? lead.lastContactDate.toISOString()

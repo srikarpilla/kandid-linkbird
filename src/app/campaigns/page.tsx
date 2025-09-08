@@ -5,7 +5,7 @@ type Campaign = {
   id: string;
   name: string;
   status: string;
-  createdAt: string; // Serialized as string
+  createdAt: string; // ISO string
 };
 
 export default function CampaignsPage() {
@@ -14,10 +14,9 @@ export default function CampaignsPage() {
     queryFn: () =>
       fetch("/api/campaigns")
         .then((res) => res.json())
-        .then((campaigns: any[]) =>
+        .then((campaigns: Campaign[]) =>
           campaigns.map((campaign) => ({
             ...campaign,
-            // Convert date objects to strings
             createdAt:
               campaign.createdAt instanceof Date
                 ? campaign.createdAt.toISOString()
