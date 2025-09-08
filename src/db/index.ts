@@ -6,4 +6,5 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
+// Pass schema explicitly as "schema" property
 export const db = drizzle(pool, { schema });
