@@ -1,5 +1,6 @@
 import { BetterAuthHandler } from 'better-auth/next';
 
+
 export const authHandler = BetterAuthHandler({
   providers: [
     {

@@ -1,0 +1,47 @@
+/kandid-linkbird
+├── src
+│   ├── app
+│   │   ├── layout.tsx                  # Main app layout, wraps pages and includes sidebar
+│   │   ├── page.tsx                    # Dashboard/home page (optional)
+│   │   ├── login
+│   │   │   └── page.tsx               # Login page UI
+│   │   ├── leads
+│   │   │   ├── page.tsx               # Leads table page
+│   │   │   └── components
+│   │   │       ├── LeadsTable.tsx     # Leads table component
+│   │   │       └── LeadDetailSheet.tsx # Detailed lead side sheet
+│   │   ├── campaigns
+│   │   │   ├── page.tsx               # Campaigns table page
+│   │   │   └── components
+│   │   │       └── CampaignsTable.tsx # Campaigns table component
+│   │   └── settings
+│   │       └── page.tsx               # Settings page
+│   ├── components
+│   │   ├── Sidebar.tsx                # Sidebar navigation component
+│   │   ├── Header.tsx                 # Header with breadcrumbs
+│   │   ├── AuthForm.tsx               # Shared auth form component
+│   │   └── ui                        # shadcn/ui components overrides or wrappers
+│   ├── db
+│   │   ├── schema.ts                  # Drizzle ORM database schema definitions
+│   │   └── index.ts                   # Drizzle database connection setup
+│   ├── lib
+│   │   └── auth.ts                   # Better Auth client integration, helper functions
+│   ├── pages
+│   │   └── api
+│   │       ├── auth
+│   │       │   └── [...all].ts       # API route for Better Auth handlers (login, OAuth)
+│   │       ├── leads.ts               # API route for leads data fetching/manipulation
+│   │       └── campaigns.ts           # API route for campaigns data fetching/manipulation
+│   ├── store
+│   │   ├── ui.ts                     # Zustand store for sidebar and UI state
+│   │   └── filters.ts                # Zustand store for filters/search states
+│   ├── styles
+│   │   └── globals.css               # Global Tailwind CSS imports and custom styles
+│   └── types                        # (Optional) TypeScript type declarations
+├── public                          # Static assets like images, icons
+├── .env.local                      # Environment variables (DB connection, OAuth keys)
+├── next.config.js                  # Next.js configuration file
+├── tailwind.config.js              # Tailwind CSS configuration
+├── drizzle.config.ts               # Drizzle ORM config for migrations
+├── package.json                   # Project dependencies and scripts
+└── README.md                      # Project setup and documentation
