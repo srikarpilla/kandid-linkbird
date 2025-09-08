@@ -5,7 +5,7 @@ type Campaign = {
   id: string;
   name: string;
   status: string;
-  createdAt: string; // ISO string
+  createdAt: string; // ISO string format
 };
 
 export default function CampaignsPage() {
