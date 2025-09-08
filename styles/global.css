@@ -1,0 +1,10 @@
+/* Customize text selection highlight color globally */
+::selection {
+  background-color: rgba(0, 0, 255, 0.3); /* light blue */
+  color: white;
+}
+
+/* Class to disable text selection */
+.user-select-none {
+  user-select: none;
+}

@@ -1,60 +1,38 @@
-"use client";
-import { useQuery } from "@tanstack/react-query";
+import { supabase } from '@/lib/supabase';
 
-type Lead = {
-  id: string;
-  name: string;
-  email: string;
-  company: string;
-  campaignId: string;
-  status: string;
-  lastContactDate: string; // ISO string
-};
+export default async function LeadsPage() {
+  const { data: leads, error } = await supabase
+    .from('leads')
+    .select('id, name, email, company, status, last_contact_date')
+    .limit(50);
 
-export default function LeadsPage() {
-  const { data: leads, isLoading, error } = useQuery<Lead[]>({
-    queryKey: ["leads"],
-    queryFn: () =>
-      fetch("/api/leads")
-        .then((res) => res.json())
-        .then((leads: Lead[]) =>
-          leads.map((lead) => ({
-            ...lead,
-            lastContactDate: lead.lastContactDate || "",
-          }))
-        ),
-  });
-
-  if (isLoading) return <div>Loading leads...</div>;
-  if (error) return <div>Error loading leads.</div>;
+  if (error) return <div>Error loading leads: {error.message}</div>;
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Leads</h1>
-      <table className="min-w-full border border-gray-200">
+    <main className="p-6">
+      <h1 className="text-xl font-bold mb-4">Leads</h1>
+      <table className="w-full border-collapse border border-gray-300">
         <thead>
-          <tr className="bg-gray-100">
-            <th className="border px-4 py-2 text-left">Name</th>
-            <th className="border px-4 py-2 text-left">Email</th>
-            <th className="border px-4 py-2 text-left">Company</th>
-            <th className="border px-4 py-2 text-left">Status</th>
-            <th className="border px-4 py-2 text-left">Last Contact</th>
+          <tr>
+            <th className="border border-gray-300 p-2">Name</th>
+            <th className="border border-gray-300 p-2">Email</th>
+            <th className="border border-gray-300 p-2">Company</th>
+            <th className="border border-gray-300 p-2">Status</th>
+            <th className="border border-gray-300 p-2">Last Contact</th>
           </tr>
         </thead>
         <tbody>
           {leads?.map((lead) => (
-            <tr key={lead.id} className="hover:bg-gray-50">
-              <td className="border px-4 py-2">{lead.name}</td>
-              <td className="border px-4 py-2">{lead.email}</td>
-              <td className="border px-4 py-2">{lead.company}</td>
-              <td className="border px-4 py-2">{lead.status}</td>
-              <td className="border px-4 py-2">
-                {new Date(lead.lastContactDate).toLocaleDateString()}
-              </td>
+            <tr key={lead.id}>
+              <td className="border border-gray-300 p-2">{lead.name}</td>
+              <td className="border border-gray-300 p-2">{lead.email}</td>
+              <td className="border border-gray-300 p-2">{lead.company}</td>
+              <td className="border border-gray-300 p-2">{lead.status}</td>
+              <td className="border border-gray-300 p-2">{new Date(lead.last_contact_date).toLocaleDateString()}</td>
             </tr>
           ))}
         </tbody>
       </table>
-    </div>
+    </main>
   );
 }

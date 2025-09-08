@@ -1,18 +1,18 @@
-import { pgTable, varchar, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
 
-export const campaigns = pgTable("campaigns", {
-  id: varchar("id", { length: 36 }).primaryKey(),
-  name: varchar("name", { length: 100 }).notNull(),
-  status: varchar("status", { length: 20 }).notNull(),
-  createdAt: timestamp("created_at").notNull(),
+export const campaigns = pgTable('campaigns', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  status: text('status').notNull(),
+  created_at: timestamp('created_at').defaultNow(),
 });
 
-export const leads = pgTable("leads", {
-  id: varchar("id", { length: 36 }).primaryKey(),
-  name: varchar("name", { length: 100 }).notNull(),
-  email: varchar("email", { length: 100 }).notNull(),
-  company: varchar("company", { length: 100 }).notNull(),
-  campaignId: varchar("campaign_id", { length: 36 }).notNull(),
-  status: varchar("status", { length: 20 }).notNull(),
-  lastContactDate: timestamp("last_contact_date").notNull(),
+export const leads = pgTable('leads', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  email: text('email').notNull(),
+  company: text('company').notNull(),
+  campaign_id: serial('campaign_id').references(() => campaigns.id),
+  status: text('status').notNull(),
+  last_contact_date: timestamp('last_contact_date'),
 });

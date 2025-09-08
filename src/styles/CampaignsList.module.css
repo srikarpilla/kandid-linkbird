@@ -1,0 +1,44 @@
+.container {
+  padding: 20px;
+  background-color: #f9fafb;
+}
+
+.title {
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.thead {
+  background-color: #e5e7eb;
+}
+
+.th {
+  padding: 12px;
+  border: 1px solid #ccc;
+  color: #111;
+}
+
+.trEven {
+  background-color: #f3f4f6;
+}
+
+.trOdd {
+  background-color: white;
+}
+
+.td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
