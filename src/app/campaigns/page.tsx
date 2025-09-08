@@ -17,10 +17,7 @@ export default function CampaignsPage() {
         .then((campaigns: Campaign[]) =>
           campaigns.map((campaign) => ({
             ...campaign,
-            createdAt:
-              campaign.createdAt instanceof Date
-                ? campaign.createdAt.toISOString()
-                : campaign.createdAt || "",
+            createdAt: campaign.createdAt || "",
           }))
         ),
   });

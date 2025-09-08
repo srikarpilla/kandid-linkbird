@@ -20,10 +20,7 @@ export default function LeadsPage() {
         .then((leads: Lead[]) =>
           leads.map((lead) => ({
             ...lead,
-            lastContactDate:
-              lead.lastContactDate instanceof Date
-                ? lead.lastContactDate.toISOString()
-                : lead.lastContactDate || "",
+            lastContactDate: lead.lastContactDate || "",
           }))
         ),
   });
