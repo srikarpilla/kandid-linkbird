@@ -5,7 +5,7 @@ type Campaign = {
   id: string;
   name: string;
   status: string;
-  createdAt: string; // ISO string date
+  createdAt: string; // ISO date string
 };
 
 export default function CampaignsPage() {
@@ -17,7 +17,6 @@ export default function CampaignsPage() {
         .then((campaigns: Campaign[]) =>
           campaigns.map((campaign) => ({
             ...campaign,
-            // @ts-expect-error: createdAt might be null or undefined, default fallback
             createdAt: campaign.createdAt || "",
           }))
         ),
