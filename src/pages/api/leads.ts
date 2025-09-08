@@ -1,13 +1,13 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 import { db } from "@/db/index";
-import { leads } from "@/db/schema"; // <-- import table object
+import { leads } from "@/db/schema";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    // Use table object here instead of string
     const allLeads = await db.select().from(leads);
     res.status(200).json(allLeads);
-  } catch {
+  } catch (error) {
+    console.error("Failed to fetch leads:", error);
     res.status(500).json({ error: "Failed to fetch leads" });
   }
 }
