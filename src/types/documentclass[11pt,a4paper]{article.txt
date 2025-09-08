@@ -1,0 +1,103 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[left=0.75in, right=0.75in, top=0.85in, bottom=0.85in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0pt}
+\setlist[itemize]{noitemsep,topsep=2pt,parsep=2pt,partopsep=0pt}
+
+% Defining hyperlink style
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+\begin{document}
+
+%================= Header ================
+\begin{center}
+    \LARGE{\textbf{SRIKAR PILLA}}\\
+    \vspace{2pt}
+    Full Stack Development \textbar~Artificial Intelligence \textbar~Machine Learning\\
+    Visakhapatnam, India \textbar~pillasrikar12@gmail.com \textbar~+91 8074654173\\
+    Portfolio: \href{https://srikarpilla.github.io/portfolio2/}{srikarpilla.github.io/portfolio2} \textbar~
+    LinkedIn: \href{https://www.linkedin.com/in/srikar-pilla-81179425a}{linkedin.com/in/srikar-pilla-81179425a}
+\end{center}
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+%================= Professional Summary ================
+\section*{Professional Summary}
+4th-year B.Tech student in AI and ML with expertise in full-stack development, Python, and JavaScript. Experienced in building scalable web platforms and optimizing workflows using MongoDB and APIs. Eager to apply Python and MERN stack skills to deliver innovative solutions in a fast-paced startup environment.
+
+%================= Skills ================
+\section*{Skills}
+\textbf{Technical Skills:} Python, JavaScript, HTML, CSS, PHP, SQL, MongoDB, AWS (Lex, Bedrock, Lambda), Microsoft Azure, Machine Learning, Deep Learning, Flask\\
+\textbf{Soft Skills:} Problem Solving, Collaboration, Adaptability
+
+%================= Work Experience ================
+\section*{Work Experience}
+\textbf{SDE Intern, Bluestock Fintech, Virtual} \hfill \textit{Dec 2024 -- Feb 2025}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+    \item Optimized Python and JavaScript modules for fintech platforms, increasing transaction speed by 15\%.
+    \item Integrated MongoDB, improving data retrieval performance by 25\%.
+    \item Streamlined workflows, reducing project delivery timelines by 10\%.
+    \item Collaborated on end-to-end product development and code testing.
+\end{itemize}
+
+\textbf{Intern, Technogen India Pvt Ltd, Hyderabad} \hfill \textit{Scheduled: May 2025 -- Jun 2025}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+    \item Developed AI/ML solutions using AWS, including a customer care number with Amazon Contact Flow.
+    \item Built a pizza-ordering chatbot with AWS Lex and a knowledge base with AWS Bedrock.
+    \item Created a generative AI chatbot using Claude in Bedrock and AWS Lambda.
+\end{itemize}
+
+%================= Education ================
+\section*{Education}
+\textbf{Bachelor of Technology in Artificial Intelligence and Machine Learning}\\
+Anil Neerukonda Institute of Technology \& Sciences, Visakhapatnam \hfill \textit{2022 -- 2026}\\
+CGPA: 8.28/10
+
+\textbf{Senior Secondary (XII), Science}\\
+Sri Chaitanya Junior College \hfill \textit{2022}\\
+CGPA: 8.15/10
+
+%================= Certifications ================
+\section*{Certifications}
+\begin{itemize}[leftmargin=1.2em, itemsep=0.2em]
+    \item Artificial Intelligence and Data Science, iHub Divya Sampark, IIT Roorkee (via Intellipaat), Virtual \hfill \textit{Nov 2024 -- Present}
+    \item SQL, Intellipaat Software Solutions, Virtual \hfill \textit{Oct 2023 -- Jan 2025}
+\end{itemize}
+
+%================= Projects ================
+\section*{Projects}
+\textbf{Tutorial Website} \hfill \textit{Mar 2025 -- Apr 2025}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+    \item Developed a full-stack web platform using HTML, CSS, JavaScript, and PHP for interactive deep learning tutorials.
+    \item Designed scalable backend APIs and database solutions (MongoDB-compatible), optimizing for large datasets.
+\end{itemize}
+
+\textbf{AI Chatbot} \hfill \textit{Scheduled: Jun 2025}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+    \item Built a document-processing system (PDF, HTML, text) using Python, NLP, and TF-IDF vectorization.
+    \item Integrated Cohere’s generative AI model for accurate responses via an interactive interface.
+\end{itemize}
+
+\textbf{Medical Advisor} \hfill \textit{Oct 2024 -- Nov 2024}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+    \item Developed an ML prediction algorithm using Python, Seaborn, and Flask for medicalzor medical advisory.
+    \item Collaborated with healthcare professionals to optimize prediction accuracy.
+\end{itemize}
+
+\textbf{Speech Emotion Recognition (SER)} \hfill \textit{Oct 2024}
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+    \item Developed an ML system to classify emotions from audio samples, evaluated using accuracy and F1 score.
+\end{itemize}
+
+\end{document}

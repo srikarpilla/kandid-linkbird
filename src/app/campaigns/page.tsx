@@ -18,7 +18,8 @@ export default function CampaignsPage() {
           campaigns.map((campaign) => ({
             ...campaign,
             // @ts-ignore: Temporarily ignore any type errors if present
-            createdAt: campaign.createdAt || "",
+            // @ts-expect-error
+createdAt: campaign.createdAt || "",
           }))
         ),
   });
