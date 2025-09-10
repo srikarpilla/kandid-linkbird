@@ -1,44 +1,47 @@
 .container {
   padding: 20px;
-  background-color: #f9fafb;
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text for readability */
 }
 
 .title {
-  color: #333;
+  color: #ffffff; /* Make title text white */
   margin-bottom: 16px;
 }
 
 .tableWrapper {
   overflow-x: auto;
-  border: 1px solid #ccc;
+  border: 1px solid #555555; /* Darker border for contrast */
   border-radius: 6px;
-  background-color: white;
+  background-color: #000000; /* Black background for table container */
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
+  color: #ffffff; /* White text in table */
 }
 
 .thead {
-  background-color: #e5e7eb;
+  background-color: #222222; /* Dark grey header background */
 }
 
 .th {
   padding: 12px;
-  border: 1px solid #ccc;
-  color: #111;
+  border: 1px solid #555555;
+  color: #ffffff; /* White text for table header */
 }
 
 .trEven {
-  background-color: #f3f4f6;
+  background-color: #111111; /* Very dark background for even rows */
 }
 
 .trOdd {
-  background-color: white;
+  background-color: #000000; /* Black background for odd rows */
 }
 
 .td {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #555555;
+  color: #ffffff; /* White text for table cells */
 }

@@ -7,9 +7,9 @@ export default NextAuth({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
+    // Add Credentials provider here if needed
   ],
-  // Add database / adapter config here if using
-  // For example, Prisma or Drizzle ORM adapter
-  // adapter: ..., 
   secret: process.env.NEXTAUTH_SECRET,
+  // Optionally add adapter if using a DB to persist users/sessions
+  // adapter: ...,
 });

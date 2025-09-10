@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --table-bg: #fef3c7; /* light yellowish for light mode */
+  --table-text: #171717;
+  --table-border: #d4d4d4;
 }
 
 @theme inline {
@@ -16,6 +19,9 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --table-bg: #1e1e2f; /* dark table background */
+    --table-text: #ededed;
+    --table-border: #44475a;
   }
 }
 
@@ -23,4 +29,23 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Table styles */
+table {
+  background-color: var(--table-bg);
+  color: var(--table-text);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid var(--table-border);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--table-border);
+  font-weight: bold;
 }
